@@ -3,6 +3,7 @@ import { TodoForm } from "./TodoForm";
 import { v4 as uuidv4 } from "uuid";
 import { Todo } from "./Todo";
 import { EditTodoForm } from "./EditTodoForm";
+import { Container } from "@mui/material";
 uuidv4();
 
 export const TodoWrapper = () => {
@@ -44,7 +45,11 @@ export const TodoWrapper = () => {
     );
   };
   return (
-    <div className="TodoWrapper">
+    <Container
+      maxWidth="xs"
+      style={{ marginTop: "1em" }}
+      className="TodoWrapper"
+    >
       <h1>Faça suas tarefas diárias!</h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((todo, index) =>
@@ -60,6 +65,6 @@ export const TodoWrapper = () => {
           />
         )
       )}
-    </div>
+    </Container>
   );
 };
